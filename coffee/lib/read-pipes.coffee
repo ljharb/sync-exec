@@ -28,7 +28,7 @@ module.exports = (dir, max_wait) ->
 
   result = {}
   for pipe in ['stdout', 'stderr', 'status']
-    result[pipe] = fs.readFileSync dir + '/' + pipe, encoding: 'utf-8'
+    result[pipe] = fs.readFileSync dir + '/' + pipe, 'utf-8'
     read = true
     fs.unlinkSync dir + '/' + pipe
 

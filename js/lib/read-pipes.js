@@ -28,9 +28,7 @@
     ref = ['stdout', 'stderr', 'status'];
     for (i = 0, len = ref.length; i < len; i++) {
       pipe = ref[i];
-      result[pipe] = fs.readFileSync(dir + '/' + pipe, {
-        encoding: 'utf-8'
-      });
+      result[pipe] = fs.readFileSync(dir + '/' + pipe, 'utf-8');
       read = true;
       fs.unlinkSync(dir + '/' + pipe);
     }
